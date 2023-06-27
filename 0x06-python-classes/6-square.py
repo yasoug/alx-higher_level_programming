@@ -5,18 +5,14 @@
 class Square:
     """class that defines a square with attribute"""
 
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """
         Initializes the square
 
         Attributes:
             size (int): the size of a side of a square
-            position (int): tuple of 2 positive integers 
+            position (int): tuple of two positive integers
         """
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
         self.size = size
         self.position = position
 
@@ -30,9 +26,10 @@ class Square:
         """Setter : set the size attribute"""
         if type(value) is not int:
             raise TypeError("size must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
+        else:
+            self.__size = value
 
     @property
     def position(self):
@@ -46,7 +43,8 @@ class Square:
            type(value[0]) is not int or type(value[1]) is not int or \
            value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        else:
+            self.__position = value
 
     def area(self):
         """Public instance : that returns the square area"""
