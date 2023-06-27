@@ -13,6 +13,10 @@ class Square:
             size (int): the size of a side of a square
             position (int): tuple of 2 positive integers 
         """
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
         self.size = size
         self.position = position
 
