@@ -11,7 +11,7 @@ class Square:
 
         Attributes:
             size (int): the size of a side of a square
-            position (int): 
+            position (int): tuple of 2 positive integers 
         """
         self.size = size
         self.position = position
