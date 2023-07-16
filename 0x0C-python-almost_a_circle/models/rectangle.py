@@ -75,8 +75,9 @@ class Rectangle(Base):
 
     def display(self):
         """prints the rectangle instance with the character #"""
-        for i in range(self.__height):
-            print(self.__width * "#")
+        print("\n" * self.__y +
+              "\n".join(" " * self.__x + "#" * self.__width
+                        for i in range(self.__height)))
 
     def __str__(self):
         """prints [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
