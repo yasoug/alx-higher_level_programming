@@ -1,8 +1,12 @@
 #!/usr/bin/node
-if (process.argv.length === 2 || process.argv[3] === undefined) {
-  console.log('0');
+function SecondBiggest (array) {
+  if (array.length < 2) {
+    return (0);
+  } else {
+    array.sort(function (a, b) { return a - b; });
+    array.pop();
+    return (array.pop());
+  }
 }
-if (process.argv.length > 3) {
-  const sortedargs = process.argv.slice(2).sort();
-  console.log(sortedargs[process.argv.length - 4]);
-}
+const array = process.argv.slice(2);
+console.log(SecondBiggest(array));
